@@ -6,7 +6,7 @@ require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Vulnerability: Stored Cross Site Scripting (XSS)' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'title' ]   = 'Open a Support Ticket' . $page[ 'title_separator' ].$page[ 'title' ];
 $page[ 'page_id' ] = 'xss_s';
 $page[ 'help_button' ]   = 'xss_s';
 $page[ 'source_button' ] = 'xss_s';
@@ -38,7 +38,7 @@ require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/xss_s/source/{$vulnerabili
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Vulnerability: Stored Cross Site Scripting (XSS)</h1>
+	<h1>Open a Support Ticket</h1>
 
 	<div class=\"vulnerable_code_area\">
 		<form method=\"post\" name=\"guestform\" \">
@@ -54,8 +54,8 @@ $page[ 'body' ] .= "
 				<tr>
 					<td width=\"100\">&nbsp;</td>
 					<td>
-						<input name=\"btnSign\" type=\"submit\" value=\"Sign Guestbook\" onclick=\"return validateGuestbookForm(this.form);\" />
-						<input name=\"btnClear\" type=\"submit\" value=\"Clear Guestbook\" onClick=\"return confirmClearGuestbook();\" />
+						<input name=\"btnSign\" type=\"submit\" value=\"Create Ticket\" onclick=\"return validateGuestbookForm(this.form);\" />
+						<input name=\"btnClear\" type=\"submit\" value=\"Reset\" onClick=\"return confirmClearGuestbook();\" />
 					</td>
 				</tr>
 			</table>\n";
@@ -71,15 +71,6 @@ $page[ 'body' ] .= "
 
 	" . dvwaGuestbook() . "
 	<br />
-
-	<h2>More Information</h2>
-	<ul>
-		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/attacks/xss' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/xss-filter-evasion-cheatsheet' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://en.wikipedia.org/wiki/Cross-site_scripting' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://www.cgisecurity.com/xss-faq.html' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://www.scriptalert1.com/' ) . "</li>
-	</ul>
 </div>\n";
 
 dvwaHtmlEcho( $page );

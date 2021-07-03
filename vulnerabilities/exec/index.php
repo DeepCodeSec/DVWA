@@ -6,7 +6,7 @@ require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
-$page[ 'title' ]   = 'Vulnerability: Command Injection' . $page[ 'title_separator' ].$page[ 'title' ];
+$page[ 'title' ]   = 'Network Diagnostics' . $page[ 'title_separator' ].$page[ 'title' ];
 $page[ 'page_id' ] = 'exec';
 $page[ 'help_button' ]   = 'exec';
 $page[ 'source_button' ] = 'exec';
@@ -33,7 +33,7 @@ require_once DVWA_WEB_PAGE_TO_ROOT . "vulnerabilities/exec/source/{$vulnerabilit
 
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
-	<h1>Vulnerability: Command Injection</h1>
+	<h1>Network Diagnostics</h1>
 
 	<div class=\"vulnerable_code_area\">
 		<h2>Ping a device</h2>
@@ -52,14 +52,6 @@ $page[ 'body' ] .= "
 		</form>
 		{$html}
 	</div>
-
-	<h2>More Information</h2>
-	<ul>
-		<li>" . dvwaExternalLinkUrlGet( 'https://www.scribd.com/doc/2530476/Php-Endangers-Remote-Code-Execution' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://www.ss64.com/bash/' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'http://www.ss64.com/nt/' ) . "</li>
-		<li>" . dvwaExternalLinkUrlGet( 'https://owasp.org/www-community/attacks/Command_Injection' ) . "</li>
-	</ul>
 </div>\n";
 
 dvwaHtmlEcho( $page );
